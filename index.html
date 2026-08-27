@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nayeem Sarker — MEAL Manager | Information Management Manager | Data Analytics Manager</title>
+<meta name="description" content="Nayeem Sarker — dual Master's professional in Statistics and Computer Science & Engineering with 3+ years of INGO/humanitarian information-management experience across 26 Rohingya refugee camps, 4,500+ protection case workflows, MEAL, DQA, Power BI, KoboToolbox, SQL and Python." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          slate: {
+            950: '#0B1220',
+            900: '#0F172A',
+            850: '#141F35',
+            800: '#1B2A45',
+          },
+          royal: { DEFAULT: '#2148B8', deep: '#1E3A8A', light: '#5B7FE0' },
+          teal:  { DEFAULT: '#0D9488', bright: '#2DD4BF', dim: '#0B6E64' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          mono: ['Fira Code', 'ui-monospace', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  :root{
+    --bg:#0B1220; --bg2:#0F172A; --surface: rgba(27,42,69,0.55); --surface-solid:#141F35;
+    --border: rgba(148,163,184,0.14); --border-strong: rgba(148,163,184,0.28);
+    --text:#E7ECF5; --text-muted:#8CA0C2; --text-dim:#5E7093;
+    --royal:#3457C9; --royal-deep:#1E3A8A; --teal:#14B8A6; --teal-dim:#0D9488;
+  }
+  html[data-theme="light"]{
+    --bg:#F1F4FA; --bg2:#E7ECF6; --surface: rgba(255,255,255,0.55); --surface-solid:#FFFFFF;
+    --border: rgba(30,58,138,0.12); --border-strong: rgba(30,58,138,0.22);
+    --text:#111A2E; --text-muted:#3E4E6E; --text-dim:#6B7A97;
+    --royal:#1E3A8A; --royal-deep:#1E3A8A; --teal:#0D9488; --teal-dim:#0D9488;
+  }
+  *{ scroll-behavior:smooth; }
+  body{
+    background:
+      radial-gradient(1200px 600px at 12% -8%, rgba(52,87,201,0.20), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(20,184,166,0.14), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    transition:background .4s ease, color .4s ease;
+  }
+  .font-mono{ font-family:'Fira Code',monospace; }
+  ::selection{ background:var(--teal); color:#04140F; }
+
+  .glass{
+    background:var(--surface);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border:1px solid var(--border);
+  }
+  .glass-strong{
+    background:var(--surface-solid);
+    border:1px solid var(--border-strong);
+  }
+  .grid-overlay{
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+  .eyebrow{ letter-spacing:.18em; font-family:'Fira Code',monospace; }
+  .grad-text{
+    background: linear-gradient(100deg, var(--teal) 0%, var(--royal) 60%, var(--teal) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    background-size:200% auto;
+    animation: sheen 7s linear infinite;
+  }
+  @keyframes sheen{ to{ background-position:200% center; } }
+
+  .nav-link{ position:relative; color:var(--text-muted); transition:color .25s; }
+  .nav-link:hover{ color:var(--text); }
+  .nav-link::after{
+    content:''; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--teal);
+    transition:width .25s ease;
+  }
+  .nav-link:hover::after{ width:100%; }
+
+  .card-hover{ transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
+  .card-hover:hover{ transform:translateY(-6px); border-color:var(--teal); box-shadow:0 20px 60px -20px rgba(20,184,166,0.35); }
+
+  .btn-primary{
+    background:linear-gradient(120deg, var(--royal), var(--royal-deep));
+    box-shadow: 0 8px 30px -10px rgba(52,87,201,.6);
+  }
+  .btn-primary:hover{ box-shadow: 0 10px 36px -8px rgba(52,87,201,.85); transform:translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--border-strong); }
+  .btn-ghost:hover{ border-color:var(--teal); color:var(--teal); }
+
+  /* Pipeline signature element */
+  .pipe-rail{
+    position:absolute; top:50%; left:4%; right:4%; height:2px; transform:translateY(-50%);
+    background: repeating-linear-gradient(90deg, var(--border-strong) 0 6px, transparent 6px 12px);
+  }
+  .pipe-packet{
+    position:absolute; top:50%; width:10px; height:10px; border-radius:9999px;
+    background: var(--teal); box-shadow:0 0 0 4px rgba(20,184,166,0.18), 0 0 18px rgba(20,184,166,0.9);
+    transform:translate(-50%,-50%);
+    animation: travel 6s cubic-bezier(.65,0,.35,1) infinite;
+  }
+  @keyframes travel{
+    0%{ left:4%; opacity:0; }
+    6%{ opacity:1; }
+    94%{ opacity:1; }
+    100%{ left:96%; opacity:0; }
+  }
+  .pipe-node{ transition: transform .3s, border-color .3s; }
+  .pipe-node:hover{ transform:translateY(-4px); border-color:var(--teal); }
+  .pipe-num{ font-family:'Fira Code',monospace; }
+
+  .tab-btn{ border:1px solid var(--border); color:var(--text-muted); transition:.25s; }
+  .tab-btn.active{ background:var(--teal); color:#04140F; border-color:var(--teal); font-weight:600; }
+  .tab-btn:not(.active):hover{ border-color:var(--teal); color:var(--teal); }
+
+  .badge{ font-family:'Fira Code',monospace; border:1px solid var(--border-strong); color:var(--text-muted); }
+
+  .theme-toggle{ border:1px solid var(--border-strong); }
+
+  .divider-glow{ height:1px; background:linear-gradient(90deg, transparent, var(--teal), transparent); opacity:.5; }
+
+  .kpi-num{ font-family:'Fira Code',monospace; }
+
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  ::-webkit-scrollbar-thumb{ background:var(--border-strong); border-radius:8px; }
+
+  @media (max-width: 900px){
+    .pipe-rail, .pipe-packet{ display:none; }
+  }
+</style>
+</head>
+<body class="antialiased" style="background-color:var(--bg); color:var(--text);">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50">
+  <div class="mx-3 mt-3 md:mx-8 md:mt-5">
+    <nav class="glass rounded-2xl px-5 py-3 flex items-center justify-between">
+      <a href="#home" class="font-mono text-sm md:text-base tracking-tight" style="color:var(--text);"><span style="color:var(--teal);">N.</span>Sarker <span class="hidden sm:inline text-xs" style="color:var(--text-dim);">// information.management</span></a>
+      <div class="hidden lg:flex items-center gap-6 text-sm">
+        <a href="#about" class="nav-link">About</a><a href="#pipeline" class="nav-link">Pipeline</a><a href="#overview" class="nav-link">Overview</a><a href="#dashboards" class="nav-link">Systems</a><a href="#projects" class="nav-link">Evidence</a><a href="#publication" class="nav-link">Publication</a><a href="#experience" class="nav-link">Experience</a><a href="#education" class="nav-link">Education</a><a href="#capabilities" class="nav-link">Capabilities</a><a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center gap-2"><button id="themeToggle" aria-label="Toggle color theme" class="theme-toggle w-9 h-9 rounded-full grid place-items-center" style="color:var(--text);"><i class="fa-solid fa-moon text-sm" id="themeIcon"></i></button><a href="#contact" class="hidden md:inline-flex btn-primary text-sm text-white px-4 py-2 rounded-full font-medium">Contact</a></div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+  <div class="absolute inset-0 grid-overlay pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto px-6 relative">
+    <p class="eyebrow text-xs uppercase mb-5" style="color:var(--teal);">// UN/INGO Leadership Profile — MEAL · IM · Data Analytics</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] max-w-5xl">Bridging <span class="grad-text">data architecture, MEAL workflows and humanitarian information systems</span> for better programme decisions.</h1>
+    <p class="mt-6 max-w-3xl text-base md:text-lg" style="color:var(--text-muted);"><strong style="color:var(--text);">Nayeem Sarker</strong> — dual Master’s professional in <span style="color:var(--text);">Statistics</span> and <span style="color:var(--text);">Computer Science &amp; Engineering</span> from Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh. I bring <strong style="color:var(--text);">10+ years across statistics, research and data analytics</strong> and <strong style="color:var(--text);">3+ years of dedicated INGO/humanitarian information-management experience</strong>.</p>
+    <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">Across a UNHCR-funded EPRC programme, I supported information management for <strong style="color:var(--text);">26 Rohingya refugee camps</strong>, including approximately <strong style="color:var(--text);">4,500+ protection-case workflows</strong>, while developing systems, DQA processes, dashboards, reporting workflows and staff capacity.</p>
+    <div class="mt-9 flex flex-wrap items-center gap-4">
+      <a href="mailto:nayeemsarker.sta.sust.bd@gmail.com?subject=INGO%20MEAL%20%2F%20Information%20Management%20Opportunity" class="btn-primary text-white px-6 py-3 rounded-full font-medium text-sm inline-flex items-center gap-2"><i class="fa-solid fa-paper-plane"></i> Discuss an Opportunity</a>
+      <a href="assets/Nayeem_Sarker_INGO_IM_MEAL_CV.pdf" target="_blank" rel="noopener" class="btn-ghost px-6 py-3 rounded-full font-medium text-sm inline-flex items-center gap-2" style="color:var(--text);"><i class="fa-solid fa-file-arrow-down"></i> Download Professional CV</a>
+      <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="w-11 h-11 rounded-full glass grid place-items-center" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nayeem-sarker-44a31439a/" target="_blank" rel="noopener" class="w-11 h-11 rounded-full glass grid place-items-center" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="glass rounded-2xl p-5 card-hover"><div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">26</div><div class="text-xs mt-1" style="color:var(--text-muted);">Refugee camps under IM oversight</div></div>
+      <div class="glass rounded-2xl p-5 card-hover"><div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">4,500+</div><div class="text-xs mt-1" style="color:var(--text-muted);">Sensitive protection case workflows managed</div></div>
+      <div class="glass rounded-2xl p-5 card-hover"><div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">3</div><div class="text-xs mt-1" style="color:var(--text-muted);">Web-based IMS/PIMS platforms deployed · ~40% reporting overhead reduction</div></div>
+      <div class="glass rounded-2xl p-5 card-hover"><div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">~150</div><div class="text-xs mt-1" style="color:var(--text-muted);">Field &amp; programme staff trained</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<!-- 01 ABOUT -->
+<section id="about" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-6xl mx-auto px-6"><div class="grid md:grid-cols-12 gap-12"><div class="md:col-span-4"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 01 — About</p><h2 class="text-3xl md:text-4xl font-bold mt-3">Dual MA-level technical foundation, field-tested in humanitarian programmes.</h2><p class="mt-5 text-sm" style="color:var(--text-muted);">I connect statistical reasoning and computer-science systems thinking with the practical demands of MEAL, protection information management and operational reporting.</p></div><div class="md:col-span-8 grid sm:grid-cols-2 gap-5"><div class="glass rounded-2xl p-6 card-hover"><div class="w-11 h-11 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12);color:var(--teal);"><i class="fa-solid fa-chart-line"></i></div><h3 class="font-semibold">M.Sc. Statistics</h3><p class="text-xs mt-1 font-mono" style="color:var(--text-dim);">SUST · 2022</p><p class="text-sm mt-3" style="color:var(--text-muted);">Data Mining, Text Mining, Biostatistics and Advanced Statistical Inference — a foundation for indicator analysis, uncertainty-aware reasoning and evidence generation.</p></div><div class="glass rounded-2xl p-6 card-hover"><div class="w-11 h-11 rounded-xl grid place-items-center mb-4" style="background:rgba(52,87,201,.14);color:var(--royal-light,#5B7FE0);"><i class="fa-solid fa-database"></i></div><h3 class="font-semibold">M.Sc. Computer Science &amp; Engineering</h3><p class="text-xs mt-1 font-mono" style="color:var(--text-dim);">SUST · final result pending</p><p class="text-sm mt-3" style="color:var(--text-muted);">Extends the statistical foundation into information systems, data processing, machine learning, databases and computational workflows.</p></div><div class="glass rounded-2xl p-6 card-hover sm:col-span-2"><div class="w-11 h-11 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12);color:var(--teal);"><i class="fa-solid fa-people-roof"></i></div><h3 class="font-semibold">Field-tested information management</h3><p class="text-sm mt-3" style="color:var(--text-muted);">In the UNHCR-funded CODEC EPRC programme, I worked across Child Protection, GBV and Community-Based Protection information flows in Cox's Bazar. The work combined sensitive-data handling, case-management information, indicator reporting, digital collection, DQA, dashboards, systems development and staff capacity building.</p></div></div></div></div></section>
+
+<!-- DATA PIPELINE VISUALIZER -->
+<!-- 02 PIPELINE -->
+<section id="pipeline" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-6xl mx-auto px-6"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 02 — Information Architecture &amp; MEAL Pipeline</p><h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">From field collection to management decision.</h2><p class="mt-4 max-w-3xl text-sm" style="color:var(--text-muted);">A practical five-stage workflow connecting data quality, interoperability, analytics and evidence-based reporting.</p><div class="relative mt-16"><div class="pipe-rail hidden md:block"></div><div class="pipe-packet hidden md:block"></div><div class="grid md:grid-cols-5 gap-5 md:gap-4 relative"><div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--teal);"><span class="pipe-num text-xs" style="color:var(--teal);">01</span><h3 class="font-semibold mt-2 text-sm">Collection &amp; XLSForm Logic</h3><p class="text-xs mt-2" style="color:var(--text-muted);">KoboToolbox forms, validation rules, skip logic and structured field workflows designed to improve measurement quality at source.</p></div><div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--teal);"><span class="pipe-num text-xs" style="color:var(--teal);">02</span><h3 class="font-semibold mt-2 text-sm">DQA &amp; Pipeline Cleaning</h3><p class="text-xs mt-2" style="color:var(--text-muted);">Python and SQL workflows for cleaning, validation, deduplication, cross-variable checks and confidentiality-aware processing.</p></div><div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--royal);"><span class="pipe-num text-xs" style="color:var(--royal-light,#5B7FE0);">03</span><h3 class="font-semibold mt-2 text-sm">System Interoperability &amp; Integration</h3><p class="text-xs mt-2" style="color:var(--text-muted);">ActivityInfo, CPIMS+, 5W matrices and structured reporting requirements aligned to programme and UN/sector information standards.</p></div><div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--royal);"><span class="pipe-num text-xs" style="color:var(--royal-light,#5B7FE0);">04</span><h3 class="font-semibold mt-2 text-sm">Advanced BI &amp; Predictive Modeling</h3><p class="text-xs mt-2" style="color:var(--text-muted);">Power BI, DAX, R Shiny and statistical inference for KPI monitoring, disaggregation, trend analysis and analytical decision support.</p></div><div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--teal);"><span class="pipe-num text-xs" style="color:var(--teal);">05</span><h3 class="font-semibold mt-2 text-sm">Decision Support &amp; Evidence</h3><p class="text-xs mt-2" style="color:var(--text-muted);">Executive dashboards, M&amp;E frameworks, donor-facing reporting and concise evidence products for programme management.</p></div></div></div></div></section>
+
+
+<!-- 03 60-SECOND OVERVIEW -->
+<section id="overview" class="py-16 md:py-20" style="background:linear-gradient(180deg,rgba(45,212,191,.045),transparent);"><div class="max-w-6xl mx-auto px-6"><div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5"><div><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 03 — 60-Second Profile Overview</p><h2 class="text-3xl md:text-4xl font-bold mt-3">The whole professional profile in one minute.</h2><p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">Four quick views: foundation, measurable humanitarian impact, core competencies and target roles.</p></div><div class="text-xs uppercase tracking-widest" style="color:var(--text-muted);">4 steps · ~60 seconds</div></div><div class="mt-9 glass rounded-3xl p-5 md:p-7"><div class="grid md:grid-cols-4 gap-2" role="tablist" aria-label="60-second professional overview"><button class="overview-tab active text-left rounded-2xl p-4" data-step="0" role="tab" aria-selected="true"><span class="text-xs uppercase tracking-wider" style="color:var(--teal);">01</span><span class="block font-semibold mt-1">Foundation</span><span class="block text-xs mt-1" style="color:var(--text-muted);">Statistics + CSE</span></button><button class="overview-tab text-left rounded-2xl p-4" data-step="1" role="tab" aria-selected="false"><span class="text-xs uppercase tracking-wider" style="color:var(--teal);">02</span><span class="block font-semibold mt-1">INGO Impact</span><span class="block text-xs mt-1" style="color:var(--text-muted);">26 camps + 4,500 cases</span></button><button class="overview-tab text-left rounded-2xl p-4" data-step="2" role="tab" aria-selected="false"><span class="text-xs uppercase tracking-wider" style="color:var(--teal);">03</span><span class="block font-semibold mt-1">Core Competencies</span><span class="block text-xs mt-1" style="color:var(--text-muted);">MEAL + PIM + DQA</span></button><button class="overview-tab text-left rounded-2xl p-4" data-step="3" role="tab" aria-selected="false"><span class="text-xs uppercase tracking-wider" style="color:var(--teal);">04</span><span class="block font-semibold mt-1">Target Roles</span><span class="block text-xs mt-1" style="color:var(--text-muted);">Manager / Lead / Specialist</span></button></div><div class="mt-6 grid lg:grid-cols-[1.2fr_.8fr] gap-6 items-stretch"><div class="rounded-2xl p-6 md:p-8" style="background:rgba(255,255,255,.025);border:1px solid var(--border);"><div id="overview-content"></div></div><div class="rounded-2xl p-6" style="background:rgba(45,212,191,.045);border:1px solid rgba(45,212,191,.16);"><p class="text-xs uppercase tracking-widest" style="color:var(--teal);">At a glance</p><div class="grid grid-cols-2 gap-4 mt-5"><div><div class="text-2xl font-bold">2</div><div class="text-xs mt-1" style="color:var(--text-muted);">Master's degrees</div></div><div><div class="text-2xl font-bold">10+</div><div class="text-xs mt-1" style="color:var(--text-muted);">Years statistics / research / analytics</div></div><div><div class="text-2xl font-bold">26</div><div class="text-xs mt-1" style="color:var(--text-muted);">Refugee camps supported</div></div><div><div class="text-2xl font-bold">~40%</div><div class="text-xs mt-1" style="color:var(--text-muted);">Reporting overhead reduction</div></div></div><div class="mt-5 pt-5" style="border-top:1px solid var(--border);"><p class="text-xs uppercase tracking-widest" style="color:var(--teal);">Protection information</p><p class="text-sm font-medium leading-relaxed mt-2"><span class="text-2xl font-bold">4,500+</span> sensitive protection case workflows</p></div><div class="mt-6 pt-5" style="border-top:1px solid var(--border);"><p class="text-xs uppercase tracking-widest" style="color:var(--teal);">Role fit</p><p class="text-sm font-medium leading-relaxed mt-2">MEAL Manager · IM Manager · Data Analytics Manager · PIM / IM Specialist</p></div></div></div></div></div></section>
+<style>.overview-tab{border:1px solid transparent;transition:all .2s ease}.overview-tab:hover{background:rgba(255,255,255,.035);border-color:var(--border)}.overview-tab.active{background:rgba(45,212,191,.08);border-color:rgba(45,212,191,.25)}.overview-fade{animation:overviewFade .22s ease}@keyframes overviewFade{from{opacity:.15;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}</style>
+<script>(function(){const steps=[{kicker:'Foundation',title:'A dual Master’s foundation connecting statistics with information systems.',body:'Formal training in <strong>Statistics</strong> and <strong>Computer Science & Engineering</strong> at Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh provides the methodological and technical base for programme data, databases, analytical workflows and evidence generation.',tags:['MSc Statistics','MSc CSE','Biostatistics','Data Analytics']},{kicker:'INGO Impact',title:'Humanitarian information management at operational scale.',body:'Across a UNHCR-funded EPRC programme, I supported information management across <strong>26 Rohingya refugee camps</strong>, including approximately <strong>4,500+ protection-case workflows</strong>. I also designed and maintained <strong>3 web-based IMS/PIMS platforms</strong>, contributing to approximately <strong>40% lower institutional reporting overhead</strong>.',tags:['26 Camps','4,500+ Cases','3 IMS/PIMS','~40% Reduction']},{kicker:'Core Competencies',title:'A full information lifecycle from collection to decision support.',body:'My strongest capabilities span <strong>MEAL, Protection Information Management, DQA, database architecture, digital data collection, Power BI, SQL/Python pipelines and responsible handling of sensitive information</strong>.',tags:['MEAL','PIM','DQA','Power BI','SQL/Python','Data Protection']},{kicker:'Target Roles',title:'Ready for management and specialist information roles.',body:'I am targeting <strong>MEAL Manager, Information Management Manager, Data Analytics Manager</strong> and <strong>Information Management / Protection IM Specialist</strong> positions where statistical reasoning, technical delivery and humanitarian programme understanding need to work together.',tags:['MEAL Manager','IM Manager','Data Analytics Manager','IM Specialist']}];const content=document.getElementById('overview-content');const tabs=Array.from(document.querySelectorAll('.overview-tab'));function render(i){const s=steps[i];content.className='overview-fade';content.innerHTML=`<p class="text-xs uppercase tracking-widest" style="color:var(--teal);">${s.kicker}</p><h3 class="text-2xl md:text-3xl font-bold mt-3 leading-tight">${s.title}</h3><p class="text-sm md:text-base leading-7 mt-5" style="color:var(--text-muted);">${s.body}</p><div class="flex flex-wrap gap-2 mt-6">${s.tags.map(t=>`<span class="badge text-[11px] px-2.5 py-1 rounded-full">${t}</span>`).join('')}</div>`;tabs.forEach((tab,idx)=>{const active=idx===i;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',active?'true':'false')})}tabs.forEach(tab=>tab.addEventListener('click',()=>render(Number(tab.dataset.step))));render(0)})();</script>
+<!-- DASHBOARDS / SHINY -->
+<section id="dashboards" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 04 — Live Embedded Dashboards &amp; Systems Evidence</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Working systems that make information-management capability visible.</h2>
+    <p class="mt-4 max-w-2xl text-sm" style="color:var(--text-muted);">These demonstrations are evidence of system-building, data-flow and analytical capability. They complement, rather than replace, programme outcomes and professional experience.</p>
+
+    <div class="grid lg:grid-cols-2 gap-6 mt-12">
+
+      <div class="glass-strong rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video relative" style="background:var(--bg2);">
+          <iframe src="https://nayeememolin.github.io/eprc.cpims.com/" title="EPRC CPIMS Demo IMS" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">React / JS</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">Firebase</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">CPIMS+ aligned</span>
+          </div>
+          <h3 class="font-semibold">Demo Protection IMS (EPRC · CPIMS)</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">Demonstrates the full data lifecycle from collection and quality assurance to structured analytical outputs in a 26-camp Child Protection context.</p>
+          <div class="flex gap-4 mt-4 text-sm">
+            <a href="https://nayeememolin.github.io/eprc.cpims.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+            <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video relative" style="background:var(--bg2);">
+          <iframe src="https://nayeememolin.github.io/bid-system/BID_Project/index.html" title="BID MIS Demo" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">MIS</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">Referral tracking</span>
+          </div>
+          <h3 class="font-semibold">Demo BID MIS System</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">Demonstrates how structured case data, indicator definitions and field workflows shape the quality and usability of downstream analysis.</p>
+          <div class="flex gap-4 mt-4 text-sm">
+            <a href="https://nayeememolin.github.io/bid-system/BID_Project/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+            <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video relative" style="background:var(--bg2);">
+          <iframe src="https://nayeememolin.github.io/bia-universe/BIA_World/index.html" title="BIA MIS Demo" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">MIS</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">Case management</span>
+          </div>
+          <h3 class="font-semibold">Demo BIA MIS System</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">Demonstrates a structured protection-information workflow and the interoperability challenges that motivate research in humanitarian informatics.</p>
+          <div class="flex gap-4 mt-4 text-sm">
+            <a href="https://nayeememolin.github.io/bia-universe/BIA_World/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+            <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+<!-- AFTER: Live Embedded R Shiny Dashboard -->
+<div class="glass-strong rounded-2xl overflow-hidden card-hover">
+  <div class="aspect-video relative" style="background:var(--bg2);">
+    <iframe src="https://01a03f71-b15a-fa2a-43e9-e49a9cbafa25.share.connect.posit.cloud/" title="Child Protection Case Analytics Dashboard" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap gap-2 mb-3">
+      <span class="badge text-[11px] px-2 py-1 rounded-full">R Shiny</span>
+      <span class="badge text-[11px] px-2 py-1 rounded-full">Posit Connect</span>
+      <span class="badge text-[11px] px-2 py-1 rounded-full">Child Protection</span>
+    </div>
+    <h3 class="font-semibold">Child Protection Case Analytics Dashboard</h3>
+    <p class="text-sm mt-2" style="color:var(--text-muted);">Interactive R Shiny environment for exploring protection indicators, case closures, risk levels and demographic patterns across refugee-camp locations.</p>
+    <div class="flex gap-4 mt-4 text-sm">
+      <a href="https://01a03f71-b15a-fa2a-43e9-e49a9cbafa25.share.connect.posit.cloud/" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+      <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<!-- 05 PROJECTS -->
+<section id="projects" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-6xl mx-auto px-6"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 05 — Projects &amp; Evidence</p><h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">Evidence framed for programme value, analytical rigor and measurable outcomes.</h2><p class="mt-5 max-w-4xl text-sm md:text-base" style="color:var(--text-muted);">Selected work uses the Google XYZ structure where evidence is available: <strong style="color:var(--text);">accomplishment → measurable result → method</strong>. Metrics are reported conservatively and only where supported by the professional record.</p><div id="filterBar" class="flex flex-wrap gap-2 mt-10" role="toolbar" aria-label="Filter projects"><button class="tab-btn active px-4 py-2 rounded-full text-xs" data-filter="all">All</button><button class="tab-btn px-4 py-2 rounded-full text-xs" data-filter="humanitarian">Humanitarian / PIM</button><button class="tab-btn px-4 py-2 rounded-full text-xs" data-filter="meal">MEAL / DQA</button><button class="tab-btn px-4 py-2 rounded-full text-xs" data-filter="data">Data / BI</button><button class="tab-btn px-4 py-2 rounded-full text-xs" data-filter="statistics">Statistics / GIS</button><button class="tab-btn px-4 py-2 rounded-full text-xs" data-filter="nlp">NLP / AI</button><button class="tab-btn px-4 py-2 rounded-full text-xs" data-filter="responsible">Responsible Data</button></div><div class="grid md:grid-cols-2 gap-5 mt-7">
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian meal data"><span class="badge text-[11px] px-2 py-1 rounded-full">HUMANITARIAN · PIM · MEAL</span><h3 class="font-semibold text-lg mt-4">Protection Information Management Systems</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Accomplishment.</strong> Designed, deployed and maintained 3 web-based IMS/PIMS platforms supporting protection case data, indicator tracking and referral logs across a 26-camp humanitarian programme.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Measured result.</strong> Reduced institutional reporting overhead by approximately <strong style="color:var(--text);">40%</strong>.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Combined structured information architecture, protection-data workflows, reporting requirements and operational user needs.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">IMS/PIMS</span><span class="badge text-[11px] px-2 py-1 rounded-full">CPIMS+</span><span class="badge text-[11px] px-2 py-1 rounded-full">ActivityInfo</span><span class="badge text-[11px] px-2 py-1 rounded-full">SQL</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian meal data"><span class="badge text-[11px] px-2 py-1 rounded-full">FIELD → EVIDENCE · DQA</span><h3 class="font-semibold text-lg mt-4">Field-to-Evidence Automated Data Pipelines</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Accomplishment.</strong> Connected digital collection, data cleaning, validation and analytical reporting workflows for programme monitoring.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Measured result.</strong> Supported recurring KPI monitoring, beneficiary disaggregation, trend analysis and reporting across field and management workflows.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Used KoboToolbox/XLSForms, Python, SQL, Excel, R Shiny and Power BI across collection, DQA and decision support.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">Python</span><span class="badge text-[11px] px-2 py-1 rounded-full">SQL</span><span class="badge text-[11px] px-2 py-1 rounded-full">Power BI</span><span class="badge text-[11px] px-2 py-1 rounded-full">R Shiny</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian meal responsible"><span class="badge text-[11px] px-2 py-1 rounded-full">PROTECTION · SENSITIVE DATA</span><h3 class="font-semibold text-lg mt-4">Protection Case Information Workflow</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Accomplishment.</strong> Supported information workflows representing approximately <strong style="color:var(--text);">4,500+ protection cases</strong> in a humanitarian case-management environment.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Measured result.</strong> Enabled structured analysis and reporting across protection information flows in a 26-camp programme.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Applied data validation, confidentiality safeguards and coordination with Case Management and M&amp;E teams.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">PIM</span><span class="badge text-[11px] px-2 py-1 rounded-full">CPIMS+</span><span class="badge text-[11px] px-2 py-1 rounded-full">DQA</span><span class="badge text-[11px] px-2 py-1 rounded-full">Data Protection</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="meal data"><span class="badge text-[11px] px-2 py-1 rounded-full">MEAL · DATA QUALITY</span><h3 class="font-semibold text-lg mt-4">KoboToolbox / XLSForm DQA Toolchain</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Accomplishment.</strong> Designed and maintained digital data-collection tools for CP, GBV, CBP and Education programme workflows.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Measured result.</strong> Improved consistency of field submissions by embedding validation rules, skip logic and structured data-entry controls at collection.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Built KoboToolbox/XLSForms, trained enumerators and integrated collection design with downstream cleaning and reporting.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">KoboToolbox</span><span class="badge text-[11px] px-2 py-1 rounded-full">XLSForms</span><span class="badge text-[11px] px-2 py-1 rounded-full">Validation</span><span class="badge text-[11px] px-2 py-1 rounded-full">Training</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="data meal humanitarian"><span class="badge text-[11px] px-2 py-1 rounded-full">BI · REPORTING · DECISION SUPPORT</span><h3 class="font-semibold text-lg mt-4">Power BI Programme Intelligence</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Accomplishment.</strong> Built and maintained interactive dashboards for KPI monitoring, beneficiary disaggregation, trends and protection information.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Measured result.</strong> Turned recurring programme datasets into management-ready analytical views supporting reporting and operational review.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Used Power BI, DAX, Power Query and automated Excel/Python workflows.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">Power BI</span><span class="badge text-[11px] px-2 py-1 rounded-full">DAX</span><span class="badge text-[11px] px-2 py-1 rounded-full">Power Query</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics"><span class="badge text-[11px] px-2 py-1 rounded-full">STATISTICAL MODELING · TIME SERIES</span><h3 class="font-semibold text-lg mt-4">Rainfall Time-Series Forecasting</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Research problem.</strong> Assess whether seasonal time-series structure can support district-level rainfall forecasting and characterize temporal variation.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Implemented a SARIMA forecasting model in R to represent trend and seasonal dynamics.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Relevance.</strong> Demonstrates a statistical foundation for environmental risk, planning and future predictive analytics.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">R</span><span class="badge text-[11px] px-2 py-1 rounded-full">SARIMA</span><span class="badge text-[11px] px-2 py-1 rounded-full">Time Series</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics"><span class="badge text-[11px] px-2 py-1 rounded-full">EPIDEMIOLOGY · GIS · INFERENCE</span><h3 class="font-semibold text-lg mt-4">Spatial Analysis of COVID-19 Risk</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Research problem.</strong> Examine geographic variation in COVID-19 transmission risk across Bangladesh and identify comparatively higher-risk areas.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Combined district-level GIS mapping with inferential statistical analysis to examine spatial variation.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Relevance.</strong> Connects statistical reasoning with population-level geography for health and humanitarian analysis.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">ArcGIS</span><span class="badge text-[11px] px-2 py-1 rounded-full">R</span><span class="badge text-[11px] px-2 py-1 rounded-full">Spatial Analysis</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="nlp"><span class="badge text-[11px] px-2 py-1 rounded-full">NLP · DEEP LEARNING</span><h3 class="font-semibold text-lg mt-4">Bengali Math-Quest &amp; NLP</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Research problem.</strong> Explore how deep-learning methods can support question answering in Bengali, an under-resourced language, using a domain-specific mathematical task.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Developed a Bengali-language mathematics question-answering system using Python and TensorFlow.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Relevance.</strong> Demonstrates applied machine-learning and NLP capability complementary to data-intensive programme environments.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">Python</span><span class="badge text-[11px] px-2 py-1 rounded-full">TensorFlow</span><span class="badge text-[11px] px-2 py-1 rounded-full">Bengali NLP</span></div></article>
+<article class="project-card glass rounded-2xl p-7 card-hover" data-cat="responsible statistics"><span class="badge text-[11px] px-2 py-1 rounded-full">RESPONSIBLE DATA · PRIVACY</span><h3 class="font-semibold text-lg mt-4">Digital Privacy &amp; Security Assessment for Vulnerable Groups</h3><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Research problem.</strong> Examine factors associated with digital privacy and security risks among children and vulnerable groups across populations and locations.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Method.</strong> Applied statistical modeling, hypothesis testing, survey methods and GIS-based analysis using SPSS/STATA and related computational tools.</p><p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Relevance.</strong> Connects quantitative analysis with responsible-data principles relevant to protection information management.</p><div class="flex flex-wrap gap-2 mt-5"><span class="badge text-[11px] px-2 py-1 rounded-full">SPSS</span><span class="badge text-[11px] px-2 py-1 rounded-full">STATA</span><span class="badge text-[11px] px-2 py-1 rounded-full">GIS</span></div></article>
+</div></div></section>
+
+<!-- PUBLICATION -->
+<section id="publication" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 06 — Peer-Reviewed Publication</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Published research: statistical and data-driven analysis.</h2>
+
+    <div class="glass-strong rounded-2xl p-8 mt-10 flex flex-col md:flex-row md:items-center gap-6 card-hover">
+      <div class="w-14 h-14 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12); color:var(--teal);">
+        <i class="fa-solid fa-book-open text-xl"></i>
+      </div>
+      <div class="flex-1">
+        <h3 class="font-semibold text-lg">Forecast, Trend, Growth, and Instability of Internet Users in Bangladesh</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted);">Sarker, N., Sorkar, M. N. U., Sorkar, M. R. U., &amp; Uddin, M. T. (2022). <em>Computer Engineering and Intelligent Systems</em>, 13(4).</p>
+        <p class="font-mono text-xs mt-2" style="color:var(--text-dim);">DOI: 10.7176/CEIS/13-4-01</p>
+      </div>
+      <a href="https://iiste.org/Journals/index.php/CEIS/article/view/59330/61255" target="_blank" rel="noopener" class="btn-ghost px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 whitespace-nowrap" style="color:var(--text);">
+        View DOI <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXPERIENCE -->
+<section id="experience" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-6xl mx-auto px-6"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 07 — Professional Experience</p><h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">From information-management delivery to programme-level decision support.</h2><p class="mt-5 max-w-4xl text-sm" style="color:var(--text-muted);">Selected accomplishments use the XYZ structure: what was delivered, the measurable scale or result, and how it was achieved.</p><div class="space-y-6 mt-10">
+<div class="glass rounded-2xl p-7 card-hover"><div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2"><div><p class="text-xs font-mono" style="color:var(--text-dim);">JAN 2026 — JUN 2026 · COX'S BAZAR, BANGLADESH</p><h3 class="text-xl font-semibold mt-2">Senior Officer – Information Management · UNHCR / CODEC EPRC</h3></div><span class="badge text-[11px] px-2 py-1 rounded-full">PIM · ANALYTICS · DQA</span></div><ul class="mt-5 space-y-3 text-sm" style="color:var(--text-muted);"><li>• <strong style="color:var(--text);">Managed</strong> protection programme data and analysis across <strong style="color:var(--text);">26 Rohingya refugee camps</strong>, using Power BI, SQL, Python and Excel to support data quality, statistical analysis and evidence-based reporting.</li><li>• <strong style="color:var(--text);">Led</strong> dashboard updates, data cleaning and verification of protection information before reporting, strengthening the reliability of management information.</li><li>• <strong style="color:var(--text);">Conducted</strong> monthly analysis of Child Protection, GBV and Community-Based Protection data to identify trends, patterns and programme gaps.</li><li>• <strong style="color:var(--text);">Maintained</strong> data-collection tools and information systems as programme needs and donor/sector guidance evolved.</li></ul></div>
+<div class="glass rounded-2xl p-7 card-hover"><div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2"><div><p class="text-xs font-mono" style="color:var(--text-dim);">JAN 2025 — DEC 2025 · COX'S BAZAR, BANGLADESH</p><h3 class="text-xl font-semibold mt-2">Information Management Manager · UNHCR / CODEC EPRC</h3></div><span class="badge text-[11px] px-2 py-1 rounded-full">MANAGEMENT · MEAL · PIM</span></div><ul class="mt-5 space-y-3 text-sm" style="color:var(--text-muted);"><li>• <strong style="color:var(--text);">Oversaw</strong> information management for Child Protection, GBV and Community-Based Protection across <strong style="color:var(--text);">26 refugee camps</strong>, strengthening data quality, compliance and actionable reporting.</li><li>• <strong style="color:var(--text);">Designed, deployed and maintained 3 web-based IMS/PIMS platforms</strong>; the systems reduced institutional reporting overhead by approximately <strong style="color:var(--text);">40%</strong>.</li><li>• <strong style="color:var(--text);">Managed</strong> ActivityInfo and CPIMS+ datasets and supported 5W and multi-sector reporting requirements through structured data-quality and reporting workflows.</li><li>• <strong style="color:var(--text);">Built</strong> Power BI dashboards and automated Excel/Python pipelines for KPI monitoring, beneficiary disaggregation and trend analysis.</li><li>• <strong style="color:var(--text);">Delivered 5 technical training sessions</strong> and contributed to capacity building of approximately <strong style="color:var(--text);">150 programme personnel</strong> across CP, GBV, CBP and Education streams.</li><li>• <strong style="color:var(--text);">Applied</strong> data-protection and confidentiality safeguards when handling highly sensitive protection information.</li></ul></div>
+<div class="glass rounded-2xl p-7 card-hover"><div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2"><div><p class="text-xs font-mono" style="color:var(--text-dim);">SEP 2024 — DEC 2024 · COX'S BAZAR, BANGLADESH</p><h3 class="text-xl font-semibold mt-2">Information Management Specialist · CODEC EPRC</h3></div><span class="badge text-[11px] px-2 py-1 rounded-full">IM · DATA COLLECTION · REPORTING</span></div><ul class="mt-5 space-y-3 text-sm" style="color:var(--text-muted);"><li>• <strong style="color:var(--text);">Supported</strong> IMS deployment across <strong style="color:var(--text);">26 Rohingya refugee camps</strong>, aligning information workflows with programme requirements.</li><li>• <strong style="color:var(--text);">Processed</strong> ActivityInfo and CPIMS+ data through entry, cleaning, validation and indicator-wise reporting.</li><li>• <strong style="color:var(--text);">Developed</strong> KoboToolbox, MS Forms and Google Forms tools and supported preprocessing, statistical analysis and dashboard production.</li><li>• <strong style="color:var(--text);">Coordinated</strong> with Case Management and M&amp;E teams to maintain timely, accurate and compliant information flow.</li></ul></div>
+<div class="glass rounded-2xl p-7 card-hover"><div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2"><div><p class="text-xs font-mono" style="color:var(--text-dim);">JUN 2022 — JUN 2024 · SYLHET, BANGLADESH</p><h3 class="text-xl font-semibold mt-2">Research Intern — Statistics &amp; Data Science · Leading University</h3></div><span class="badge text-[11px] px-2 py-1 rounded-full">STATISTICS · ML · GIS</span></div><ul class="mt-5 space-y-3 text-sm" style="color:var(--text-muted);"><li>• <strong style="color:var(--text);">Conducted</strong> research on digital privacy and security for children using statistical modeling, hypothesis testing, survey design and sampling.</li><li>• <strong style="color:var(--text);">Applied</strong> machine learning and GIS-based spatial analysis and developed dashboards using Power BI, Tableau and Google Data Studio.</li><li>• <strong style="color:var(--text);">Completed</strong> 30+ analytical practice projects and contributed to 20+ professional research projects, including budget-monitoring work.</li></ul></div>
+<div class="glass rounded-2xl p-7 card-hover"><div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2"><div><p class="text-xs font-mono" style="color:var(--text-dim);">FEB 2020 — MAY 2022 · SYLHET, BANGLADESH</p><h3 class="text-xl font-semibold mt-2">Information Management Officer · SRAC</h3></div><span class="badge text-[11px] px-2 py-1 rounded-full">DATABASES · M&amp;E · REPORTING</span></div><ul class="mt-5 space-y-3 text-sm" style="color:var(--text-muted);"><li>• <strong style="color:var(--text);">Managed</strong> digital information systems and trainee databases for government- and donor-funded skill-development programmes, overseeing the data lifecycle.</li><li>• <strong style="color:var(--text);">Led</strong> transition from paper-based to digital data collection during COVID-19, supporting programme continuity.</li><li>• <strong style="color:var(--text);">Maintained</strong> monitoring tools for outputs, outcomes and indicators and prepared Monthly Progress Reports in line with reporting requirements.</li></ul></div>
+</div></div></section>
+
+<!-- 08 EDUCATION -->
+<section id="education" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-6xl mx-auto px-6"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Education</p><h2 class="text-3xl md:text-4xl font-bold mt-3">Statistics + Computer Science &amp; Engineering.</h2><div class="grid md:grid-cols-3 gap-5 mt-10"><div class="glass rounded-2xl p-6 card-hover"><span class="badge text-[11px] px-2 py-1 rounded-full">M.Sc.</span><h3 class="font-semibold mt-4">Computer Science &amp; Engineering</h3><p class="text-xs mt-2 font-mono" style="color:var(--text-dim);">Final result pending</p><p class="text-sm mt-3" style="color:var(--text-muted);">Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh.</p></div><div class="glass rounded-2xl p-6 card-hover"><span class="badge text-[11px] px-2 py-1 rounded-full">M.Sc. · 2022</span><h3 class="font-semibold mt-4">Statistics</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh.</p><p class="text-xs mt-3" style="color:var(--text-muted);">Focus: Data Mining, Text Mining, Biostatistics, Advanced Statistical Inference.</p></div><div class="glass rounded-2xl p-6 card-hover"><span class="badge text-[11px] px-2 py-1 rounded-full">B.Sc. (Hons) · 2020</span><h3 class="font-semibold mt-4">Statistics</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh.</p></div></div></div></section>
+
+<!-- 09 CAPABILITIES -->
+<section id="capabilities" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-6xl mx-auto px-6"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 09 — Core Technical Capabilities</p><h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">A practical technical stack for programme intelligence.</h2><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"><div class="glass rounded-2xl p-6 card-hover"><div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12);color:var(--teal);"><i class="fa-solid fa-shield-halved"></i></div><h3 class="font-semibold">PIM &amp; Protection Analytics</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Protection Information Management, IMS/PIMS design, CPIMS+, ActivityInfo, case-management and referral tracking, 5W reporting and protection monitoring.</p></div><div class="glass rounded-2xl p-6 card-hover"><div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background:rgba(52,87,201,.14);color:var(--royal-light,#5B7FE0);"><i class="fa-solid fa-check-double"></i></div><h3 class="font-semibold">MEAL &amp; DQA</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Indicator tracking, DQA, cleaning, validation, deduplication, cross-variable consistency checks, M&amp;E reporting and assessment support.</p></div><div class="glass rounded-2xl p-6 card-hover"><div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12);color:var(--teal);"><i class="fa-solid fa-chart-column"></i></div><h3 class="font-semibold">Power BI / DAX / R Shiny</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Interactive dashboards, KPI monitoring, Power Query, DAX, disaggregation, trend analysis, analytical interfaces and management reporting.</p></div><div class="glass rounded-2xl p-6 card-hover"><div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background:rgba(52,87,201,.14);color:var(--royal-light,#5B7FE0);"><i class="fa-solid fa-mobile-screen-button"></i></div><h3 class="font-semibold">Data Collection &amp; KoboToolbox / XLSForms</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Form design, validation rules, skip logic, digital data collection, enumerator training and quality-at-source practices.</p></div><div class="glass rounded-2xl p-6 card-hover"><div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12);color:var(--teal);"><i class="fa-solid fa-database"></i></div><h3 class="font-semibold">SQL / MySQL &amp; Data Pipelines</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Relational databases, structured datasets, Python/R workflows, automated Excel/Python processing and repeatable analytical pipelines.</p></div><div class="glass rounded-2xl p-6 card-hover"><div class="w-10 h-10 rounded-xl grid place-items-center mb-4" style="background:rgba(52,87,201,.14);color:var(--royal-light,#5B7FE0);"><i class="fa-solid fa-user-shield"></i></div><h3 class="font-semibold">Responsible Data &amp; Sensitive Case Handling</h3><p class="text-sm mt-3" style="color:var(--text-muted);">Confidentiality safeguards, data-sharing protocols, secure information handling and responsible management of sensitive protection information.</p></div></div><div class="glass rounded-2xl p-7 mt-6"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">Additional toolkit</p><p class="mt-4 text-sm leading-7" style="color:var(--text-muted);">Advanced Excel · Power Query · Python · R · SPSS · STATA · ArcGIS · QGIS · Git/GitHub · Tableau · Google Data Studio · Microsoft Office · Data Visualization · Statistical Analysis · Survey &amp; Assessment Design · Capacity Building</p></div></div></section>
+
+<!-- 10 CONTACT / CTA -->
+<section id="contact" class="py-24 md:py-32 border-t" style="border-color:var(--border);"><div class="max-w-4xl mx-auto px-6 text-center"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 10 — Get in touch</p><h2 class="text-3xl md:text-5xl font-bold mt-3">Building stronger information systems, evidence and programme decisions.</h2><p class="mt-5 text-sm md:text-base max-w-2xl mx-auto" style="color:var(--text-muted);">Open to <strong style="color:var(--text);">MEAL Manager, Information Management Manager, Data Analytics Manager and Information Management Specialist</strong> opportunities across UN/INGO, humanitarian and development programmes.</p><div class="flex flex-wrap justify-center gap-4 mt-10"><a href="mailto:nayeemsarker.sta.sust.bd@gmail.com?subject=INGO%20MEAL%20%2F%20Information%20Management%20Opportunity" class="btn-primary text-white px-7 py-3.5 rounded-full font-medium text-sm inline-flex items-center gap-2"><i class="fa-solid fa-paper-plane"></i> Contact Me</a><a href="assets/Nayeem_Sarker_INGO_IM_MEAL_CV.pdf" target="_blank" rel="noopener" class="btn-ghost px-7 py-3.5 rounded-full font-medium text-sm inline-flex items-center gap-2" style="color:var(--text);"><i class="fa-solid fa-file-arrow-down"></i> Download INGO CV</a><a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="btn-ghost px-5 py-3.5 rounded-full font-medium text-sm inline-flex items-center gap-2" style="color:var(--text);"><i class="fa-brands fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/nayeem-sarker-44a31439a/" target="_blank" rel="noopener" class="btn-ghost px-5 py-3.5 rounded-full font-medium text-sm inline-flex items-center gap-2" style="color:var(--text);"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a></div><div class="flex flex-wrap justify-center gap-6 mt-10 text-sm" style="color:var(--text-muted);"><a href="mailto:nayeemsarker.sta.sust.bd@gmail.com" class="inline-flex items-center gap-2 nav-link"><i class="fa-solid fa-envelope"></i> nayeemsarker.sta.sust.bd@gmail.com</a><a href="tel:+8801521407522" class="inline-flex items-center gap-2 nav-link"><i class="fa-solid fa-phone"></i> +880 1521-407522</a><span class="inline-flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Cumilla, Bangladesh</span></div></div></section>
+
+<footer class="py-10 border-t text-center text-xs" style="border-color:var(--border);color:var(--text-dim);"><p>© <span id="year"></span> Nayeem Sarker. UN/INGO professional profile — MEAL · Information Management · Data Analytics · Protection Information Management.</p></footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+(function(){const root=document.documentElement,themeIcon=document.getElementById('themeIcon'),saved=localStorage.getItem('nayeem-theme');root.setAttribute('data-theme',saved==='light'?'light':'dark');function icon(){const light=root.getAttribute('data-theme')==='light';themeIcon.className=light?'fa-solid fa-sun text-sm':'fa-solid fa-moon text-sm'}icon();document.getElementById('themeToggle').addEventListener('click',()=>{const light=root.getAttribute('data-theme')==='light';root.setAttribute('data-theme',light?'dark':'light');localStorage.setItem('nayeem-theme',light?'dark':'light');icon()})})();
+(function(){const filterBar=document.getElementById('filterBar');const cards=Array.from(document.querySelectorAll('.project-card'));filterBar.addEventListener('click',e=>{const btn=e.target.closest('.tab-btn');if(!btn)return;filterBar.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.filter;cards.forEach(card=>{const cats=(card.dataset.cat||'').split(/\s+/);card.hidden=!(filter==='all'||cats.includes(filter))})})})();
+</script>
+</body></html>
