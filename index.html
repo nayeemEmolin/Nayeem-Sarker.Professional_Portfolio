@@ -233,6 +233,50 @@ nav .nav-link{font-size:12px}nav .gap-6{gap:16px}
 }
 @media(max-width:380px){#home h1{font-size:30px}.pd-kpis{gap:8px}.pd-kpi{padding:11px;gap:8px}.pd-value{font-size:25px}.pd-kpi small{font-size:10px}.pd-flow{grid-template-columns:repeat(3,1fr)}.pd-stage:not(:last-child):after{display:none}}
 </style>
+<style>
+/* CSS 3D scenes: geometry keeps its data dimensions; motion changes lighting/depth. */
+#overview{perspective:1400px;--pd-depth:7px}
+.pd-grid{perspective:1400px}
+.pd-panel{position:relative;isolation:isolate;background:linear-gradient(145deg,rgba(52,87,201,.08),transparent 55%),var(--surface);box-shadow:0 7px 0 -3px var(--bg2),0 8px 0 -3px var(--border-strong),0 16px 24px -18px rgba(0,0,0,.65);transition:box-shadow .35s,border-color .35s}
+.pd-panel:hover{border-color:var(--teal);box-shadow:0 7px 0 -3px var(--bg2),0 8px 0 -3px var(--teal),0 22px 35px -22px rgba(20,184,166,.35)}
+.pd-panel:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;background:radial-gradient(ellipse at 15% 5%,rgba(56,189,248,.08),transparent 55%);animation:pd-ambient3d 9s ease-in-out infinite}
+.pd-career,.pd-bars,.pd-tools,.pd-matrix,.pd-academic,.pd-flow{perspective:800px;transform-style:preserve-3d}
+.pd-track{overflow:visible;transform:rotateX(12deg);transform-style:preserve-3d;background:var(--border);box-shadow:0 3px 5px rgba(0,0,0,.16)}
+.pd-fill{overflow:visible;border-radius:2px;box-shadow:0 1px 0 #0d9488,0 2px 0 #0b7c76,0 3px 0 #096463,0 5px 8px rgba(0,0,0,.25);transform-style:preserve-3d}
+.pd-fill:before{content:'';position:absolute;left:0;right:0;top:-3px;height:3px;transform-origin:bottom;transform:skewX(-35deg);background:linear-gradient(90deg,#6b8bfa,#6ae9dc);opacity:.8}
+.pd-fill:after,.pd-role button:after{border-radius:inherit;clip-path:inset(0);width:100%}
+.pd-bars{gap:9px}.pd-bar{padding-top:4px;padding-bottom:4px}.pd-role button{overflow:visible;border-radius:3px;box-shadow:0 2px 0 #0d817d,0 4px 0 #09605e,0 6px 8px rgba(0,0,0,.22)}
+.pd-role button:before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent 55%);pointer-events:none;animation:pd-face-light 5s ease-in-out infinite}
+.pd-career{gap:13px}
+.pd-donut{perspective:800px;min-height:178px}.pd-donut-stage{position:relative;width:120px;height:140px;transform-style:preserve-3d;transform:rotateX(28deg) rotateZ(-8deg);animation:pd-donut-sway 9s ease-in-out infinite}
+.pd-donut-stage svg{position:absolute;inset:0;width:120px;height:120px;overflow:visible;backface-visibility:visible}
+.pd-donut-stage .pd-donut-depth{pointer-events:none;filter:brightness(.55) saturate(1.2);transform:translateZ(var(--z))}
+.pd-donut-stage>svg:last-child{transform:translateZ(5px);filter:drop-shadow(0 10px 8px rgba(0,0,0,.25))}
+.pd-donut-depth .pd-ring{animation:none!important;stroke-opacity:1}
+.pd-tools .pd-dotrail{transform-style:preserve-3d;transform:rotateX(10deg);height:12px}
+.pd-tooldot{width:12px;height:12px;top:-1px;background:radial-gradient(circle at 28% 25%,#c5fff5 0%,#37dfcb 25%,#0d9488 65%,#064e4a 100%);box-shadow:2px 4px 0 -1px #064e4a,3px 7px 7px rgba(0,0,0,.35);animation:pd-sphere-light 4s var(--delay) ease-in-out infinite}
+.pd-matrix{transform:rotateX(10deg);transform-origin:center center}.pd-cell{position:relative;transform-style:preserve-3d}a.pd-cell{opacity:1;box-shadow:0 1px 0 var(--c),0 3px 0 color-mix(in srgb,var(--c) 45%,#071021),0 5px 5px rgba(0,0,0,.2);transform:translateZ(4px);animation:pd-tile-light 5s var(--delay) ease-in-out infinite}
+a.pd-cell:before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,255,255,.3),transparent 60%)}a.pd-cell:hover{transform:translateZ(9px);outline:1px solid var(--text)}
+.pd-matrix-row{gap:6px}.pd-matrix{gap:7px}
+.pd-academic i{background:radial-gradient(circle at 30% 25%,#b8fff0,#14b8a6 50%,#065f57);box-shadow:0 4px 0 #064e4a,0 7px 9px rgba(0,0,0,.25);animation:pd-node-hover 5s ease-in-out infinite}.pd-academic a:nth-child(2) i{animation-delay:-1.6s}.pd-academic a:nth-child(3) i{animation-delay:-3.2s}.pd-academic i.pd-open{background:var(--bg);box-shadow:0 3px 0 var(--border-strong)}
+.pd-stage{box-shadow:0 4px 0 -1px var(--bg),0 5px 0 -1px var(--border-strong);transform:translateZ(0);animation:pd-platform-light 6s calc(var(--i)*.55s) ease-in-out infinite}.pd-stage:hover{border-color:var(--teal);transform:translateZ(5px)}
+.pd-kpi{box-shadow:0 4px 0 -2px var(--border-strong),0 10px 15px -12px #000}.pd-value{text-shadow:0 1px 0 var(--bg2),0 2px 0 var(--bg2),0 4px 12px rgba(20,184,166,.12)}
+@keyframes pd-donut-sway{0%,100%{transform:rotateX(28deg) rotateY(-12deg) rotateZ(-8deg)}50%{transform:rotateX(38deg) rotateY(12deg) rotateZ(8deg)}}
+@keyframes pd-ambient3d{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes pd-face-light{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes pd-sphere-light{0%,100%{filter:brightness(.9);transform:translateZ(2px)}50%{filter:brightness(1.2);transform:translateZ(7px)}}
+@keyframes pd-tile-light{0%,100%{filter:brightness(.85)}50%{filter:brightness(1.2)}}
+@keyframes pd-node-hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes pd-platform-light{0%,100%{border-color:var(--border);filter:brightness(1)}50%{border-color:var(--teal);filter:brightness(1.06)}}
+#overview.pd-paused *,#overview.pd-paused *:before,#overview.pd-paused *:after,#overview.pd-offscreen *,#overview.pd-offscreen *:before,#overview.pd-offscreen *:after{animation-play-state:paused!important}
+@media(max-width:560px){.pd-donut-stage{width:130px;height:140px}.pd-donut-stage svg{width:130px;height:130px}.pd-bars{gap:8px}.pd-matrix{transform:none}}
+@media(prefers-reduced-motion:reduce){#overview *,#overview *:before,#overview *:after{animation:none!important;transition:none!important}.pd-donut-stage{transform:rotateX(25deg) rotateZ(-5deg)}.pd-matrix{transform:none}}
+</style>
+<style>
+/* Keep specular highlights inside the bar face, away from text labels. */
+.pd-fill:after,.pd-role button:after{inset:0;width:100%;transform:none;background:linear-gradient(100deg,transparent 25%,rgba(255,255,255,.3) 50%,transparent 75%);background-size:250% 100%;animation:pd-surface-sweep 5s ease-in-out infinite;pointer-events:none}
+@keyframes pd-surface-sweep{0%,20%{background-position:150% 0}80%,100%{background-position:-150% 0}}
+</style>
 </head>
 <body class="antialiased" style="background-color:var(--bg); color:var(--text);">
 
@@ -488,7 +532,17 @@ cards.forEach((c,j)=>{const row=document.createElement('div');row.className='pd-
 const motion=document.getElementById('pd-motion'),reduce=matchMedia('(prefers-reduced-motion: reduce)');function syncMotion(){if(reduce.matches){root.classList.add('pd-paused');motion.textContent='Reduced motion';motion.disabled=true;motion.setAttribute('aria-pressed','true')}else{motion.disabled=false;motion.textContent=root.classList.contains('pd-paused')?'Resume motion':'Pause motion';motion.setAttribute('aria-pressed',String(root.classList.contains('pd-paused')))}}motion.addEventListener('click',()=>{root.classList.toggle('pd-paused');syncMotion()});reduce.addEventListener('change',()=>{root.classList.toggle('pd-paused',reduce.matches);syncMotion()});syncMotion();
 })();
 </script>
+<script>
+(function(){
+ const donut=document.querySelector('#pd-donut>svg');if(!donut)return;
+ const stage=document.createElement('div');stage.className='pd-donut-stage';donut.before(stage);
+ for(let layer=5;layer>=1;layer--){const depth=donut.cloneNode(true);depth.classList.add('pd-donut-depth');depth.setAttribute('aria-hidden','true');depth.removeAttribute('role');depth.removeAttribute('aria-label');depth.style.setProperty('--z',(-layer*2)+'px');depth.querySelectorAll('text,title,.pd-orbit').forEach(n=>n.remove());stage.append(depth)}stage.append(donut);
+ // Keep extruded segments in sync with the existing filter interaction.
+ new MutationObserver(()=>{const rings=Array.from(donut.querySelectorAll('.pd-ring'));stage.querySelectorAll('.pd-donut-depth').forEach(svg=>svg.querySelectorAll('.pd-ring').forEach((ring,i)=>ring.style.opacity=rings[i].style.opacity||'1'))}).observe(donut,{subtree:true,attributes:true,attributeFilter:['style']});
+})();
+</script>
 </body></html>
+
 
 
 
